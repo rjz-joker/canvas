@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500">您的浏览器不支持canvas</canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    } else {
+
+    }
+    // 创建img元素
+    var img = new Image(); //创建一个img标签
+    // img.src = "myImage.png"; //设置图片源地址
+    // // 绘制img
+    // // 第一个参数是要绘制的img，参数2，3：绘制的img在canvas的坐标
+    // ctx.drawImage(img, 0, 0);
+
+    img.onload = function() {
+        // ctx.drawImage(img, 0, 0);
+
+        // drawImage(image,x,y,width,height)
+        // width 和 height  这两个参数来控制  当像canvas画入时应该缩放的大小
+        ctx.drawImage(img, 0, 0, 400, 400);
+
+        // drawImage(image,x,y,swidth,sheight,dx,dy,dwidth,dheight)
+        // 前四个参数是定义原图像的切片位置和大小，后四个则是定义切片的目标显示位置和大小
+        ctx.drawImage(img, 0, 0, 400, 400, 100, 100, 300, 300);
+
+
+    }
+    img.src = "img/myImage.png";
+</script>
+
+</html>

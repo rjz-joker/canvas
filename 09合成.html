@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500">您的浏览器不支持canvas</canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    } else {
+
+    }
+    // 合成
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, 200, 200);
+    ctx.globalCompositeOpeartion = "source-over";
+    ctx.fillStyle = 'red';
+    ctx.fillRect(100, 100, 200, 200);
+</script>
+
+</html>

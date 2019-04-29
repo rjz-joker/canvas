@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500">您的浏览器不支持canvas</canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    } else {
+
+    }
+    // translate(x,y) 用来移动canvas的原点到指定位置
+    // translate方法接受两个参数，x是左右偏移量，y是上下偏移量
+    ctx.save();
+    ctx.translate(100, 100);
+    ctx.strokeRect(0, 0, 100, 100);
+    ctx.restore(); //恢复到最初状态
+    ctx.save();
+    ctx.translate(220, 220);
+    ctx.fillRect(0, 0, 100, 100);
+    ctx.restore();
+
+
+
+
+    // rotate(angle)  旋转坐标轴  这个方法只接受桉树
+    ctx.fillStyle = "red";
+    ctx.save();
+    ctx.translate(100, 100);
+    ctx.rotate(Math.PI / 180 * 45);
+    ctx.fillStyle = 'bule';
+    ctx.fillRect(0, 0, 100, 100);
+    ctx.restore();
+    ctx.save();
+    ctx.translate(0, 0);
+    ctx.fillRect(0, 0, 50, 50);
+    ctx.restore();
+
+
+
+    // scale(x,y)  我们用他来增减图形在canvas中的像素的数目，对形状，位图进行缩小或者放大。
+
+
+
+    // 变形矩阵
+    // transform(a,b,c,d,e,f);
+    // [a,c,e]
+    // [b,d,f]
+    // [0,0,1]
+</script>
+
+</html>

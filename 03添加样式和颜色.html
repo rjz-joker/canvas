@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500">您的浏览器不支持canvas</canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    } else {
+
+    }
+
+    // fillStyle
+    // for (var i = 0; i < 6; i++) {
+    //     for (var j = 0; j < 6; j++) {
+    //         ctx.fillStyle = 'rgb(' + Math.floor(255 - 42.5 * i) + ',' + Math.floor(255 - 42.5 * j) + ',0)';
+    //         ctx.fillRect(j * 50, i * 50, 50, 50);
+    //     }
+    // }
+
+    // strokeStyle 
+    function draw() {
+        for (var i = 0; i < 6; i++) {
+            for (var j = 0; j < 6; j++) {
+                ctx.strokeStyle = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+                ctx.strokeRect(j * 50, i * 50, 40, 40);
+            }
+        }
+    }
+    setInterval(() => {
+        draw();
+    }, 100);
+
+    function randomInt(from, to) {
+        return parseInt(Math.random() * (to - from + 1) + from);
+    }
+</script>
+
+</html>

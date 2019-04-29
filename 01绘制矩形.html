@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500">您的浏览器不支持canvas</canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    } else {
+
+    }
+    ctx.fillRect(10, 10, 100, 50);
+    ctx.strokeRect(10, 70, 100, 50);
+    ctx.clearRect(20, 20, 20, 20);
+    // fillRect(x, y, width, height)  绘制一个填充的矩形
+    // strokeRect(x, y, width, height)  绘制一个矩形的边框
+    // clearRect(x, y, widh, height)  清理指定的矩形区域，然后这块区域会变的完全透明
+</script>
+
+</html>

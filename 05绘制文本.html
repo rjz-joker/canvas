@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500">您的浏览器不支持canvas</canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    } else {
+
+    }
+    ctx.font = "100px sans-serif";
+    ctx.fillText("天若有情", 10, 100);
+    ctx.strokeText("天若有情", 10, 200);
+
+    // 给文本添加样式
+    // font = value  当前我们用来绘制文本的样式，这个字符串使用和css font属性相同
+    // textAlign = value 文本对齐选项  start end left right center 默认值是start
+    // textBaseline = value 基线对齐选项，top  hanging middle alphabetic  ideographic  bottom   默认值是alphabetic 
+    // direction = value 文本方向  可能的值是ltr rtl inherit  默认值是 inherit
+</script>
+
+</html>
